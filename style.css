@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
+
+:root{
+    --bg-main: #464646;
+    --bg-card: #2D2727;
+    --border-color: #efc745;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    background-color: var(--bg-main);
+}
+
+h1{
+    color: #ffff;
+    font-weight: 500px;
+    font-size: 40px;
+}
+
+span{
+    color: var(--border-color);
+}
+
+#card-section{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 32px;
+}
+
+/* .card{
+    width: 160px;
+    height: 140px;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    box-shadow: 0px 8px 24px rgba(149,157,165,0.2);
+    padding: 32px;
+}
+
+.card_selected{
+    border: 5px solid var(--border-color);
+}
+
+.card_match {
+    border: 10px solid purple;
+} */
+
+.card {
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+}
+
+.card,
+.back-card,
+.front-card {
+    height: 10rem;
+    width: 10rem;
+}
+
+.back-card,
+.front-card {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front-card {
+    background: var(--border-color);
+    background-size: contain;
+    border-radius: .6rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.back-card {
+    transform: rotateY(180deg);
+    /* background-color: #6589F9; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.card_selected {
+    transform: rotateY(180deg);
+}
+
+.card_match .front-card {
+    background-color: var(--bg-card);
+}
+
